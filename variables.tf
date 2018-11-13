@@ -10,11 +10,11 @@ variable "tags" {
     }
 }
 
-variable "VN01" {
+variable "vn-core" {
     description = "Virtual Network 01 - Core"
     default     =   "Core"
 }
-variable "VN01-SN01" {
+variable "coresn01" {
     type = "map"
     default = {
         name    = "training"
@@ -22,7 +22,7 @@ variable "VN01-SN01" {
     }
 }
 
-variable "VN01-SN02" {
+variable "coresn02" {
     type = "map"
     default = {
         name    = "dev"
@@ -30,15 +30,18 @@ variable "VN01-SN02" {
     }
 }
 
-variable "VN01-SN03" {
+variable "coresn03" {
     type = "map"
     default = {
-        name    = "Gateway Subnet"
+        name    = "GatewaySubnet"
         subnet  = "10.0.0.0/24"
     }
 }
 
-variable "PIP01" {
-    description = "Public IP 01 - VNGW"
-    default     =   "vpnGatewayPublicIP"
+variable "vngw-core" {
+    type = "map"
+    default = {
+        vngwname    = "CORE-VNGW"
+        pipname  = "vpnGatewayPublicIP"
+    }
 }
