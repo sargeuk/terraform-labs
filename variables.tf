@@ -1,6 +1,6 @@
 variable "loc" {
     description = "Default Azure region"
-    default     =   "West Europe"
+    default     =   "westeurope"
 }
 
 variable "tags" {
@@ -44,4 +44,10 @@ variable "vngw-core" {
         vngwname    = "CORE-VNGW"
         pipname  = "vpnGatewayPublicIP"
     }
+}
+
+variable "webapplocs" {
+    type = "list"
+      default = ["westeurope", "eastus", "uksouth"]
+
 }
